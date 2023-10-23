@@ -7,9 +7,11 @@ from enum import Enum
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import StreamingResponse
 from lib.engine import app
+import cv2
 
-def cv_version(input):
-    return print({input})
+def cv_version(name=cv2.__version__):
+    banku=f"({name})"
+    return banku
 
 # Allows the server to be run in this interactive environment
 nest_asyncio.apply()
